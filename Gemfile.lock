@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    scheduled-format (0.1.0)
+    scheduled-format (0.0.1)
       commonjs_modules (~> 0.0)
       parslet (~> 1.8)
 
