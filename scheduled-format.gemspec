@@ -9,8 +9,9 @@ Gem::Specification.new do |s|
   s.summary     = ''
   s.description = "#{s.summary}."
   s.license     = 'MIT'
+  s.metadata['yard.run'] = 'yri' # use 'yard' to build full HTML docs.
 
-  s.files       = Dir.glob('lib/**/*.rb') + ['README.md']
+  s.files       = Dir.glob('lib/**/*.rb') + ['README.md', '.yardopts']
 
   s.add_runtime_dependency('commonjs_modules', ['~> 0.0'])
   s.add_runtime_dependency('parslet', ['~> 1.8'])
