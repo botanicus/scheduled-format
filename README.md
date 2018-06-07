@@ -48,7 +48,7 @@ Prague
   and tags.
 
 _For more details about the format see
-[parser_spec.rb](https://github.com/botanicus/scheduled-format/blob/master/spec/scheduled-format/parser/parser_spec.rb parser_spec.rb)._
+[parser_spec.rb](https://github.com/botanicus/scheduled-format/blob/master/spec/scheduled-format/parser/parser_spec.rb)._
 
 [Gem version]: https://rubygems.org/gems/scheduled-format
 [Build status]: https://travis-ci.org/botanicus/scheduled-format
