@@ -6,6 +6,15 @@
 [![CodeClimate status][CC img]][CodeClimate status]
 [![YARD documentation][YD img]][YARD documentation]
 
+# API
+
+```ruby
+require 'import'
+
+simple_format = import('simple-format')
+simple_format.parse(File.read('tasks.todo'))
+```
+
 # Format
 
 This format is used to store **scheduled tasks**: tasks that will be done later
