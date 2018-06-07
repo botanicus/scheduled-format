@@ -6,6 +6,9 @@
 [![CodeClimate status][CC img]][CodeClimate status]
 [![YARD documentation][YD img]][YARD documentation]
 
+This format is used to store **scheduled tasks**: tasks that will be done later
+or in a certain context.
+
 # API
 
 ```ruby
@@ -16,9 +19,6 @@ simple_format.parse(File.read('tasks.todo'))
 ```
 
 # Format
-
-This format is used to store **scheduled tasks**: tasks that will be done later
-or in a certain context.
 
 ```
 Tomorrow
@@ -48,7 +48,7 @@ Prague
   and tags.
 
 _For more details about the format see
-{https://github.com/botanicus/scheduled-format/blob/master/spec/scheduled-format/parser/parser_spec.rb parser_spec.rb}._
+[parser_spec.rb](https://github.com/botanicus/scheduled-format/blob/master/spec/scheduled-format/parser/parser_spec.rb parser_spec.rb)._
 
 [Gem version]: https://rubygems.org/gems/scheduled-format
 [Build status]: https://travis-ci.org/botanicus/scheduled-format
