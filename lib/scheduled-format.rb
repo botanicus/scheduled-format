@@ -30,8 +30,6 @@ def exports.parse(string_or_io)
   TaskList.new(nodes.empty? ? Array.new : nodes)
 end
 
-export parser: Parser,
-       transformer: Transformer,
-       task: import('scheduled-format/task'),
+export task: import('scheduled-format/task'),
        task_list: TaskList,
        task_group: import('scheduled-format/task_group')

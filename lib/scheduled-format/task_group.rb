@@ -58,6 +58,7 @@ class TaskGroup
 
   # TODO: Next Monday
   # NOTE: For parsing we don't use %-d etc, only %d.
+  # TODO: Use some configuration object, so this could be modified from the outside.
   DATE_FORMATS = {
     '%d/%m'    => :next_month,    # 1/1
     '%d/%m/%Y' => nil,            # 1/1/2018
