@@ -2,13 +2,22 @@ source 'https://rubygems.org/'
 
 gemspec
 
-gem 'pry'
+group(:development) do
+  gem 'pry'
+  gem 'rubocop'
 
-gem 'yard'
-gem 'yard-rspec'
-gem 'redcarpet'
-gem 'github-markup'
+  gem 'yard'
+  gem 'yard-rspec'
+  gem 'redcarpet'
+  gem 'github-markup'
+end
 
-gem 'rspec'
-gem 'coveralls'
+
+group(:test) do
+  gem 'rspec'
 gem 'timecop'
+end
+
+group(:travis) do
+  gem 'coveralls'
+end
