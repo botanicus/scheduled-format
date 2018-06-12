@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Task
   attr_reader :body, :time_frame, :start_time, :tags
 

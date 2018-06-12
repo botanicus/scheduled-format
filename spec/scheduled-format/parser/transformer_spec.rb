@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 transformer = import('scheduled-format/parser/transformer')

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 taskGroup = import('scheduled-format/task_group')
