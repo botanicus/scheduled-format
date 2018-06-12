@@ -17,8 +17,8 @@ class TaskGroup
   #   group = TaskGroup.new(header: 'Tomorrow', tasks: tasks)
   def initialize(header:, tasks: Array.new)
     @header, @tasks = header, tasks
-    if tasks.any? { |task| ! task.is_a?(Task) }
-      raise ArgumentError.new("Task objects expected.")
+    if tasks.any? { |task| !task.is_a?(Task) }
+      raise ArgumentError, "Task objects expected."
     end
   end
 
@@ -26,9 +26,7 @@ class TaskGroup
   #
   # @since 0.2
   def <<(task)
-    unless task.is_a?(Task)
-      raise ArgumentError.new("Task expected, got #{task.class}.")
-    end
+    raise ArgumentError, "Task expected, got #{task.class}." unless task.is_a?(Task)
 
     @tasks << task unless @tasks.map(&:to_s).include?(task.to_s)
   end
@@ -37,9 +35,7 @@ class TaskGroup
   #
   # @since 0.2
   def delete(task)
-    unless task.is_a?(Task)
-      raise ArgumentError.new("Task expected, got #{task.class}.")
-    end
+    raise ArgumentError, "Task expected, got #{task.class}." unless task.is_a?(Task)
 
     @tasks.delete_if { |t2| t2.to_s == task.to_s }
   end
@@ -66,7 +62,7 @@ class TaskGroup
     '%d/%m/%Y' => nil,            # 1/1/2018
     '%A %d/%m' => :next_week,     # Monday 1/1  Note: Higher specifity has to come first.
     '%A'       => :next_week      # Monday
-  }
+  }.freeze
 
   # labels = ['Tomorrow', date.strftime('%A'), date.strftime('%-d/%m'), date.strftime('%-d/%m/%Y')]
   def scheduled_date
@@ -84,15 +80,13 @@ class TaskGroup
   # TODO: We need base_date, Date.today wouldn't cut it if we run "now g +3".
   def parse_date_in_the_future(header)
     DATE_FORMATS.each do |format, adjustment_method|
-      begin
         date = Date.strptime(header, format)
         date.define_singleton_method(:next_week) { self + 7 } # TODO: DataExts, extract it from commands.rb.
         return ensure_in_the_future(date, adjustment_method)
-      rescue ArgumentError
-      end
+    rescue ArgumentError
     end
 
-    return nil
+    nil
   end
 
   def ensure_in_the_future(date, adjustment_method)

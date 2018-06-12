@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org/'
 
 gemspec
@@ -6,16 +8,15 @@ group(:development) do
   gem 'pry'
   gem 'rubocop'
 
+  gem 'github-markup'
+  gem 'redcarpet'
   gem 'yard'
   gem 'yard-rspec'
-  gem 'redcarpet'
-  gem 'github-markup'
 end
-
 
 group(:test) do
   gem 'rspec'
-gem 'timecop'
+  gem 'timecop'
 end
 
 group(:travis) do

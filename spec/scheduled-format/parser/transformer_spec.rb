@@ -17,7 +17,7 @@ describe transformer do
                 tags: [
                   {tag: {str: 'errands'}}
                 ]
-              },
+              }
             }, {
               task: {
                 start_time: {hour: '9:20'},
